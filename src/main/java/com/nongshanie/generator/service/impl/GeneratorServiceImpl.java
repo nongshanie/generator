@@ -33,6 +33,7 @@ public class GeneratorServiceImpl implements GeneratorService {
         try {
             cfg = new Configuration();
             cfg.setDirectoryForTemplateLoading(new File("D:\\git\\generator\\src\\main\\java\\com\\nongshanie\\generator\\common\\templates"));
+            //cfg.setDirectoryForTemplateLoading(new File("/com/nongshanie/generator/common/templates"));
         } catch (Exception e) {
             e.printStackTrace();
         }

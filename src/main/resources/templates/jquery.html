@@ -1,0 +1,73 @@
+<html>
+<head>
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+            $("p").click(function(){
+                $(this).hide();
+            });
+        });
+       $(document).ready(function(){
+           var url = $("#url").attr("value");
+           var port = $("#port").attr("value");
+           var userName = $("#userName").attr("value");
+           var password = $("#password").attr("value");
+           var datebaseName = $("#datebaseName").attr("value");
+           var fileDirectory = $("#fileDirectory").attr("value");
+            $("#mybut").click(function(){
+                $.ajax({
+                    headers:{
+                        "Access-Control-Allow-Origin": "*"
+                    },
+                    type: 'POST',
+                    url: 'http://127.0.0.1:8090/generator/success',
+                    async: false,
+                    data: {
+                        'url': url,
+                        'port': port,
+                        'userName': userName,
+                        'password': password,
+                        'datebaseName': datebaseName,
+                        'fileDirectory': fileDirectory
+                    },
+                    success: function (data) {
+
+                    }
+                });
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+<p>If you click on me, I will disappear.</p>
+<button id="mybut" >mybut</button>
+<div>
+    <p>url</p>
+    <input name="url" id="url">
+</div>
+<div>
+    <p>port</p>
+    <input name="port" id="port" >
+</div>
+<div>
+    <p>userName</p>
+    <input name="userName" id="userName">
+</div>
+<div>
+    <p>password</p>
+    <input name="password" id="password">
+</div>
+<div>
+    <p>datebaseName</p>
+    <input name="datebaseName" id="datebaseName">
+</div>
+<div>
+    <p>fileDirectory</p>
+    <input name="fileDirectory" id="fileDirectory">
+</div>
+</body>
+
+</html>
