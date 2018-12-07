@@ -9,6 +9,6 @@ public interface GeneratorService {
      * @Date 2018/12/6
      * @return
      */
-    void codeGenerator() throws Exception;
+    String codeGenerator(String url,String userName,String password,String databaseName,String fileDirectory) throws Exception;
 
 }
