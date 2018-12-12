@@ -25,7 +25,7 @@ public class GeneratorController {
         String resultStr;
         HashMap<String, String> resultMap = new HashMap<>(2);
         try {
-            String jdbcUrl = "jdbc:mysql://"+url+":"+port;
+            String jdbcUrl = "jdbc:mysql://"+url+":"+port+"?serverTimezone=GMT%2B8";
             resultStr = generatorService.codeGenerator(jdbcUrl, userName, password, databaseName, fileDirectory);
             resultMap.put("status","success");
             resultMap.put("fileDirectory",resultStr);
